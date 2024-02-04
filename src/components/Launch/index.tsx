@@ -7,6 +7,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import { ChevronDown, IconPlus } from '../../data/icons';
 import SideNav from '../SideNav';
 import { toggleTheme } from '../../reducer/dataSlice';
+import { signInWithGoogle } from '../../firebaseConnection';
 
 const Launch = () => {
   const dispatch = useAppDispatch();
@@ -64,7 +65,12 @@ const Launch = () => {
               &nbsp; + Add New task &nbsp;
             </Button>
           )}
-
+          <div style={{ margin: '0 10px' }}></div>
+          {mobileQuery ? (
+            <Button small className='Launch__mobile-btn' onClick={signInWithGoogle}> Sign In With Google</Button>
+          ) : (
+            <Button className='Launch__mobile-btn' onClick={signInWithGoogle}> Sign In With Google</Button>
+          )}
           <DropDown
             text={'Board'}
             onEdit={() => dispatch(openModal({ ModalType: 'EditBoard', ModalDetail: { type: 'EditBoard' } }))}
