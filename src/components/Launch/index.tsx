@@ -67,9 +67,9 @@ const Launch = () => {
           )}
           <div style={{ margin: '0 10px' }}></div>
           {mobileQuery ? (
-            <Button small className='Launch__mobile-btn' onClick={signInWithGoogle}> Sign In With Google</Button>
+            <Button small className='Launch__mobile-btn' onClick={signInWithGoogle}>Google</Button>
           ) : (
-            <Button className='Launch__mobile-btn' onClick={signInWithGoogle}> Sign In With Google</Button>
+            <Button className='Launch__mobile-btn' onClick={signInWithGoogle}>Sign In With Google</Button>
           )}
           <DropDown
             text={'Board'}
